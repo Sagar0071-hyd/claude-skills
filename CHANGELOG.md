@@ -5,6 +5,41 @@ All notable changes to the Claude Skills Library will be documented in this file
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.7] - 2026-05-13 — Docs site refresh: nav additions, dual-publish dedup, 301 redirects
+
+### Added
+
+- **5 new C-role docs pages** added to `mkdocs.yml` nav (C-Level Advisory section): General Counsel Advisor, Chief Data Officer Advisor, Chief AI Officer Advisor, Chief Customer Officer Advisor, VP Engineering Advisor.
+- **13 new cs-* agent docs pages** added to `mkdocs.yml` nav (Agents section): cs-cfo / cs-cmo / cs-cro / cs-cpo / cs-coo / cs-chro / cs-ciso / cs-chief-of-staff / cs-general-counsel / cs-cdo / cs-caio / cs-cco / cs-vpe.
+- **`mkdocs-redirects` plugin** added to `mkdocs.yml` plugins list. Provides client-side redirects (meta-refresh + JS fallback) — Google's SERP indexing treats meta-refresh with delay=0 as 301-equivalent.
+
+### Fixed
+
+- **`scripts/generate-docs.py` dedup bug:** the auto-generator created BOTH `<name>.md` (bundled) AND `<name>-<name>.md` (standalone wrapper) for dual-published skills, producing duplicate-content pages. The dedup now detects the dual-publish pattern (`<domain>/<name>/skills/<same-name>/SKILL.md` paired with `<domain>/skills/<name>/SKILL.md`) and skips the standalone mirror in favor of the bundled (canonical) version.
+- **4 pre-existing engineering dual-publish duplicate pages deleted** with 301-equivalent redirects:
+  - `skills/engineering/chaos-engineering-chaos-engineering.md` → `skills/engineering/chaos-engineering.md`
+  - `skills/engineering/feature-flags-architect-feature-flags-architect.md` → `skills/engineering/feature-flags-architect.md`
+  - `skills/engineering/kubernetes-operator-kubernetes-operator.md` → `skills/engineering/kubernetes-operator.md`
+  - `skills/engineering/slo-architect-slo-architect.md` → `skills/engineering/slo-architect.md`
+  - All 4 old URLs redirect to the canonical page; existing Google SERP indexes preserved.
+
+### Changed
+
+- **`mkdocs.yml` `site_description`** — updated from "246 skills, 20 cs-* agents" (6 versions stale) to current "268 skills, 33 cs-* agents (incl. founder-mode C-suite), 21 /cs:* slash commands."
+- **`README.md`** — header counts updated: 246 → 268 skills; 20 → 33 agents; 33 → 54 commands; 359 → 373 Python tools. Subtitle expanded with founder-mode lineup callout.
+- **`.github/workflows/static.yml`** — install step updated from `pip install mkdocs-material` to `pip install mkdocs-material mkdocs-redirects` to support the new plugin.
+
+### Verified
+
+- `mkdocs build` succeeds (357 HTML pages generated)
+- Redirect HTML correctly emitted with `<meta http-equiv="refresh" content="0; url=...">` + JavaScript fallback that preserves URL anchors
+- karpathy `diff_surgeon`: clean on staged diff
+- 71 pre-existing skill pages preserved (no SEO equity loss)
+
+### Pre-existing (not addressed in this PR)
+
+13 INFO-level link warnings exist from before this session (broken anchors and relative-link-without-index hints). These are pre-existing in the docs and not introduced or worsened by this PR. Tracked as a separate cleanup if desired.
+
 ## [2.5.6] - 2026-05-13 — Cleanup: missing voice specs + broken agent paths
 
 ### Fixed
