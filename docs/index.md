@@ -1,6 +1,6 @@
 ---
 title: 313 Agent Skills for Codex, Gemini CLI & OpenClaw
-description: "313 production-ready Claude Code skills and agent plugins for 12 AI coding tools — including v2.7.3 AEO (Answer Engine Optimization for ChatGPT / Perplexity / Claude / Gemini / Mistral citation) + security-guidance PreToolUse hook, the v2.7.0 megaprompt-derived productivity / marketing / research stacks (capture, email-pair, reflect, landing, pulse, litreview, grants, dossier, patent, syllabus, notebooklm, research orchestrator), and the v2.6.0 Matt Pocock productivity quartet (write-a-skill, caveman, grill-me, handoff). Engineering, product, marketing, compliance, and finance agent skills for Claude Code, OpenAI Codex, Gemini CLI, Hermes Agent, Cursor, and OpenClaw."
+description: "313 production-ready Claude Code skills and agent plugins for 13 AI coding tools — including v2.7.3 AEO (Answer Engine Optimization for ChatGPT / Perplexity / Claude / Gemini / Mistral citation) + security-guidance PreToolUse hook, the v2.7.0 megaprompt-derived productivity / marketing / research stacks (capture, email-pair, reflect, landing, pulse, litreview, grants, dossier, patent, syllabus, notebooklm, research orchestrator), and the v2.6.0 Matt Pocock productivity quartet (write-a-skill, caveman, grill-me, handoff). Engineering, product, marketing, compliance, and finance agent skills for Claude Code, OpenAI Codex, Gemini CLI, Hermes Agent, Mistral Vibe, Cursor, and OpenClaw."
 hide:
   - toc
   - edit
@@ -93,7 +93,7 @@ hide:
 
     ---
 
-    One-command installable bundles for Claude Code, Codex CLI, Gemini CLI, and OpenClaw.
+    One-command installable bundles for Claude Code, Codex CLI, Gemini CLI, Hermes Agent, Mistral Vibe, and OpenClaw.
 
     [:octicons-arrow-right-24: Plugin marketplace](plugins/index.md)
 
@@ -225,7 +225,7 @@ hide:
 
     ---
 
-    Plugin marketplace for Claude Code. Sync scripts for Codex, Gemini, and Hermes Agent. Conversion script for 8 more tools.
+    Plugin marketplace for Claude Code. Sync scripts for Codex, Gemini, Hermes Agent, and Mistral Vibe. Conversion script for 7 more tools.
 
 -   :material-puzzle:{ .lg .middle } **Self-contained**
 
@@ -237,7 +237,7 @@ hide:
 
     ---
 
-    Native support for 12 AI coding tools. Write once, convert to any tool's format automatically.
+    Native support for 13 AI coding tools. Write once, convert to any tool's format automatically.
 
 -   :material-check-decagram:{ .lg .middle } **Production-grade**
 
@@ -281,6 +281,15 @@ hide:
     cd claude-skills
     python scripts/sync-hermes-skills.py --verbose
     # Skills appear in /skills and /<skill-name> automatically
+    ```
+
+=== "Mistral Vibe"
+
+    ```bash
+    git clone https://github.com/alirezarezvani/claude-skills.git
+    cd claude-skills
+    ./scripts/vibe-install.sh
+    # 306 skills install to ~/.vibe/skills/claude-skills/; same SKILL.md standard
     ```
 
 === "Cursor / Windsurf / Aider"
