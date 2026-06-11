@@ -420,7 +420,7 @@ Track document control system performance.
 
 > **⚠️ STATUS — QMSR transition (effective 2026-02-02):** FDA's Quality Management System Regulation (QMSR) final rule (89 FR 7496) amended 21 CFR Part 820 to **incorporate ISO 13485:2016 by reference** and removed the legacy QSR subsection structure. The section numbers in the table below (820.40/.180/.181/.184/.186) **no longer exist in the CFR**; they are retained only as a familiar index. Current document/record control authority is **ISO 13485:2016 §4.2** (esp. §4.2.4 control of documents, §4.2.5 control of records), with the medical device file in §4.2.3 and records additions in retained **21 CFR 820.35**. Cite the ISO 13485 clauses — not the 820.x numbers — in current compliance documentation.
 
-| Legacy QSR Section (historical, pre-2026) | Requirement | Current authority under QMSR |
+| Legacy QSR Section (historical, pre-2026) | Requirement | Current authority under QMSR (legacy QSR shown for index) |
 |-------------------------------------------|-------------|------------------------------|
 | 820.40 | Document controls | ISO 13485 §4.2.4 |
 | 820.180 | General record requirements | ISO 13485 §4.2.5 + 21 CFR 820.35 (retained) |
